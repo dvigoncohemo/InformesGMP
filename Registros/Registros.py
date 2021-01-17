@@ -9,18 +9,19 @@ import reportlab                                                    # Importa la
 Fecha = datetime.now().strftime('%d/%m/%Y')
 
 # Registra la fuente Calibri para utilizarla en el documento
-pdfmetrics.registerFont(TTFont('Calibri', 'Calibri.ttf'))
-pdfmetrics.registerFont(TTFont("Calibri-Bold", "Calibrib.ttf"))
+pdfmetrics.registerFont(TTFont('Calibri', 'Calibri.ttf'))           # Calibri
+pdfmetrics.registerFont(TTFont("Calibri-Bold", "Calibrib.ttf"))     # Calibri Bold
 
 # Crea el documento "Registros.pdf"
 ObjetoCanvas = canvas.Canvas( "Registros.pdf", pagesize = A4 )
 
 # Obtiene el Ancho y Alto de la página
-Ancho_hoja, Alto_hoja = A4
+Ancho_hoja, Alto_hoja = A4                                          # Altura: 841.8897637795277
+                                                                    # Anchura: 595.2755905511812
 
-# Crea un rectangulo Blanco del tamaño de la hoja
-ObjetoCanvas.setFillColorRGB( 1, 1, 1 )                             # Forma de asignar un color RGB
-ObjetoCanvas.rect( 0, 0, Ancho_hoja, Alto_hoja, fill = 1 )
+# Asigna el color de background a Blanco
+ObjetoCanvas.setFillColorRGB( 1, 1, 1 )                             # Asigna el color de relleno a Blanco
+ObjetoCanvas.rect( 0, 0, Ancho_hoja, Alto_hoja, fill = 1 )          # Crea un rectangulo del tamaño de la hoja
 
 # Inserta el logo de Cohemo en la esquina superior izquierda
 ObjetoCanvas.drawImage( "Logo.png",                                 # Inserta una imagen con la función: drawImage( "Imagen .png .jpg .gif", Posición_X, Posición_Y, Ancho_imagen, Alto_imagen)
@@ -145,19 +146,19 @@ ObjetoCanvas.setFont( "Calibri-Bold", 10 )                          # Cambia el 
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
 # Añade el texto: "INGENIERÍA"
-ObjetoCanvas.drawString( 120,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 120,                                       # Escribe el texto "INGENIERÍA" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          644, 
                          "INGENIERÍA"
                         )       
 
 # Añade el texto: "ANTONIO CUESTA"
-ObjetoCanvas.drawString( 266,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 266,                                       # Escribe el texto "ANTONIO CUESTA" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          644, 
                          "ANTONIO CUESTA"
                         )       
 
 # Añade el texto: "MARIO CORPA"
-ObjetoCanvas.drawString( 435,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 435,                                       # Escribe el texto "MARIO CORPA" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          644, 
                          "MARIO CORPA"
                         )       
@@ -217,15 +218,15 @@ ObjetoCanvas.setFont( "Calibri-Bold", 10 )                          # Cambia el 
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
 # Añade el texto "FECHA:"
-ObjetoCanvas.drawString( 80,                                        # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 80,                                        # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
                          "FECHA:"
                         )       
-ObjetoCanvas.drawString( 240,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 240,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
                          "FECHA:"
                         )  
-ObjetoCanvas.drawString( 400,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 400,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje")
                          629, 
                          "FECHA:"
                         )  
@@ -236,17 +237,17 @@ ObjetoCanvas.setFont( "Calibri", 10 )                               # Cambia el 
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
 # Añade la fecha 1: "00/00/0000"
-ObjetoCanvas.drawString( 163,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 160,                                       # Escribe el la Fecha con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
                          Fecha
                         )       
 # Añade la fecha 2: "00/00/0000"
-ObjetoCanvas.drawString( 323,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 320,                                       # Escribe el la Fecha con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
                          Fecha
                         ) 
 # Añade la fecha 3: "00/00/0000"
-ObjetoCanvas.drawString( 483,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 480,                                       # Escribe el la Fecha con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
                          Fecha
                         ) 
@@ -258,7 +259,7 @@ ObjetoCanvas.drawString( 483,                                       # Escribe el
 ObjetoCanvas.setStrokeColorRGB( 51/255, 63/255, 80/255 )            # Asigna el color del borde del ObjetoCanvas
 ObjetoCanvas.setFillColorRGB( 51/255, 63/255, 80/255 )              # Forma de asignar un color RGB
 ObjetoCanvas.rect( 45, 
-                   550,    
+                   580,    
                    Ancho_hoja - 85, 
                    13, 
                    fill = 1 
@@ -267,8 +268,8 @@ ObjetoCanvas.rect( 45,
 # Añade el texto: "REGISTRO DE MODIFICACIONES"
 ObjetoCanvas.setFont( "Calibri-Bold", 12 )                          # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 1, 1, 1 )                             # Asigna el color "Negro" al ObjetoCanvas
-ObjetoCanvas.drawString( 220,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         553, 
+ObjetoCanvas.drawString( 220,                                       # Escribe el texto "REGISTRO DE MODIFICACIONES" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         583, 
                          "REGISTRO DE MODIFICACIONES"
                         ) 
 
@@ -276,7 +277,7 @@ ObjetoCanvas.drawString( 220,                                       # Escribe el
 ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Forma de asignar un color RGB
 ObjetoCanvas.setStrokeColorRGB( 166/255, 166/255, 166/255 )         # Asigna el color del borde del ObjetoCanvas
 ObjetoCanvas.rect( 65, 
-                   520,    
+                   550,    
                    Ancho_hoja - 120,
                    13, 
                    fill = 1 
@@ -285,58 +286,58 @@ ObjetoCanvas.rect( 65,
 # Añade el texto: "MOD. Nº"
 ObjetoCanvas.setFont( "Calibri-Bold", 10 )                          # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
-ObjetoCanvas.drawString( 90,                                        # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         523, 
+ObjetoCanvas.drawString( 90,                                        # Escribe el texto "MOD. Nº" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         553, 
                          "MOD. Nº"
                         )
 
 # Añade el texto: "FECHA MOD."
-ObjetoCanvas.drawString( 170,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         523, 
+ObjetoCanvas.drawString( 170,                                       # Escribe el texto "FECHA MOD." con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         553, 
                          "FECHA MOD."
                         )
 
 # Añade el texto: "DESCRIPCIÓN MODIFICACIÓN"
-ObjetoCanvas.drawString( 350,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         523, 
+ObjetoCanvas.drawString( 350,                                       # Escribe el texto "DESCRIPCIÓN MODIFICACIÓN" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         553, 
                          "DESCRIPCIÓN MODIFICACIÓN"
                         )
 
 # Dibujar una línea
 ObjetoCanvas.setStrokeColorRGB( 0, 0, 0 )                           # Asigna el color del borde del ObjetoCanvas
 ObjetoCanvas.setLineWidth(0.5)
-ObjetoCanvas.line( 64.5, 
-                   518,    
+ObjetoCanvas.line( 64.5,                                            # Crea una línea con la función: line( Posicion_X1, Posicion_Y1, Posicion_X2, Posicion_Y2 )
+                   548,    
                    Ancho_hoja - 54.5,
-                   518 )                        # Crea una línea con la función: line( Posicion_X1, Posicion_Y1, Posicion_X2, Posicion_Y2 )
+                   548 )                        
 
 # Añade el texto: "0"
 ObjetoCanvas.setFont( "Calibri", 10 )                               # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
-ObjetoCanvas.drawString( 103,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         508, 
+ObjetoCanvas.drawString( 103,                                       # Escribe el texto "0" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         538, 
                          "0"
                         )
 
 # Añade la fecha: "00/00/0000"
-ObjetoCanvas.drawString( 173,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         508, 
+ObjetoCanvas.drawString( 173,                                       # Escribe el la fecha con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         538, 
                          Fecha
                         )
                         
 # Añade el texto: ""
-ObjetoCanvas.drawString( 352,                                       # Escribe el texto "¡Hola, Mundo!" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         508, 
+ObjetoCanvas.drawString( 352,                                       # Escribe el texto "" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         538, 
                          ""
                         )
 
 # Dibujar una línea
 ObjetoCanvas.setStrokeColorRGB( 0, 0, 0 )                           # Asigna el color del borde del ObjetoCanvas
 ObjetoCanvas.setLineWidth(0.5)
-ObjetoCanvas.line( 64.5, 
-                   504,    
+ObjetoCanvas.line( 64.5,                                            # Crea una línea con la función: line( Posicion_X1, Posicion_Y1, Posicion_X2, Posicion_Y2 )
+                   534,    
                    Ancho_hoja - 54.5,
-                   504 )                        # Crea una línea con la función: line( Posicion_X1, Posicion_Y1, Posicion_X2, Posicion_Y2 )
+                   534 )                        
 
 ObjetoCanvas.showPage( )
 ObjetoCanvas.save( )
