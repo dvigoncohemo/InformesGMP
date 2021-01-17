@@ -11,6 +11,7 @@ Fecha = datetime.now().strftime('%d/%m/%Y')
 # Registra la fuente Calibri para utilizarla en el documento
 pdfmetrics.registerFont(TTFont('Calibri', 'Calibri.ttf'))           # Calibri
 pdfmetrics.registerFont(TTFont("Calibri-Bold", "Calibrib.ttf"))     # Calibri Bold
+pdfmetrics.registerFont(TTFont("Calibri-Italic", "CalibriI.ttf"))     # Calibri Bold
 
 # Crea el documento "Registros.pdf"
 ObjetoCanvas = canvas.Canvas( "Registros.pdf", pagesize = A4 )
@@ -218,17 +219,17 @@ ObjetoCanvas.setFont( "Calibri-Bold", 10 )                          # Cambia el 
 ObjetoCanvas.setFillColorRGB( 0, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
 # Añade el texto "FECHA:"
-ObjetoCanvas.drawString( 80,                                        # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 93,                                        # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
-                         "FECHA:"
+                         "FECHA"
                         )       
-ObjetoCanvas.drawString( 240,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+ObjetoCanvas.drawString( 250,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          629, 
-                         "FECHA:"
+                         "FECHA"
                         )  
-ObjetoCanvas.drawString( 400,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje")
+ObjetoCanvas.drawString( 411,                                       # Escribe el texto "FECHA:" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje")
                          629, 
-                         "FECHA:"
+                         "FECHA"
                         )  
 
 
@@ -338,6 +339,45 @@ ObjetoCanvas.line( 64.5,                                            # Crea una l
                    534,    
                    Ancho_hoja - 54.5,
                    534 )                        
+
+
+########################################################################################################################
+#                                                      Página 1 de 8 - Ed. 0
+
+#La información incluida en este documento es CONFIDENCIAL. Está totalmente prohibida cualquier utilización, divulgación, distribución y/o 
+#          reproducción de esta documentación, total o parcial, sin autorización expresa en virtud de la legislación vigente.
+
+#         COHEMO, S.L.U.  - C/Camino de las Pajarillas 8, 28935 MÓSTOLES (MADRID) - Telf. +34 91 616 52 20 -  www.cohemo.com
+
+ObjetoCanvas.setFont( "Calibri", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
+ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Asigna el color "Negro" al ObjetoCanvas
+
+# Añade el texto: ""
+ObjetoCanvas.drawString( 260,                                       # Escribe el texto "" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         60, 
+                         "Página 1 de 8 - Ed. 0"
+                        )
+
+ObjetoCanvas.setFont( "Calibri-Italic", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
+ObjetoCanvas.setFillColorRGB( 1, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
+
+# Añade el texto: ""
+ObjetoTexto = ObjetoCanvas.beginText( 80, 45 )                     # Indica la posición del Texto en la página
+ObjetoTexto.textLines( "La información incluida en este documento es CONFIDENCIAL. Está totalmente prohibida cualquier utilización, divulgación, distribución y/o" )
+ObjetoCanvas.drawText( ObjetoTexto )                                        # Una vez redactado el texto se aplica a la hoja con la función: drawText( "Texto" )
+
+ObjetoTexto = ObjetoCanvas.beginText( 125, 35 )                     # Indica la posición del Texto en la página
+ObjetoTexto.textLines( "reproducción de esta documentación, total o parcial, sin autorización expresa en virtud de la legislación vigente." )
+ObjetoCanvas.drawText( ObjetoTexto )                                        # Una vez redactado el texto se aplica a la hoja con la función: drawText( "Texto" )
+
+ObjetoCanvas.setFont( "Calibri", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
+ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Asigna el color "Negro" al ObjetoCanvas
+
+# Añade el texto: ""
+ObjetoCanvas.drawString( 100,                                       # Escribe el texto "" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
+                         18, 
+                         "COHEMO, S.L.U.  - C/Camino de las Pajarillas 8, 28935 MÓSTOLES (MADRID) - Telf. +34 91 616 52 20 -  www.cohemo.com"
+                        )
 
 ObjetoCanvas.showPage( )
 ObjetoCanvas.save( )
