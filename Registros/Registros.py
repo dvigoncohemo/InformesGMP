@@ -354,7 +354,7 @@ ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Asigna el 
 
 # Añade el texto: ""
 ObjetoCanvas.drawString( 260,                                       # Escribe el texto "" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
-                         60, 
+                         60,
                          "Página 1 de 8 - Ed. 0"
                         )
 
