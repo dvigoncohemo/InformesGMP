@@ -355,13 +355,10 @@ ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Asigna el 
 # Añade el texto: ""
 ObjetoCanvas.drawString( 260,                                       # Escribe el texto "" con la función: drawString( Posicion_X, Posicion_Y, "Mensaje") 
                          60,
-<<<<<<< Updated upstream
-                         "Página 1 de 8 - Ed. 0"
-=======
                          "Página 1 de X - Ed. 0"
->>>>>>> Stashed changes
                         )
 
+                        
 ObjetoCanvas.setFont( "Calibri-Italic", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 1, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
