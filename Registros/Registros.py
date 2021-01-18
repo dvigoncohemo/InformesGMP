@@ -342,12 +342,6 @@ ObjetoCanvas.line( 64.5,                                            # Crea una l
 
 
 ########################################################################################################################
-#                                                      Página 1 de 8 - Ed. 0
-
-#La información incluida en este documento es CONFIDENCIAL. Está totalmente prohibida cualquier utilización, divulgación, distribución y/o 
-#          reproducción de esta documentación, total o parcial, sin autorización expresa en virtud de la legislación vigente.
-
-#         COHEMO, S.L.U.  - C/Camino de las Pajarillas 8, 28935 MÓSTOLES (MADRID) - Telf. +34 91 616 52 20 -  www.cohemo.com
 
 ObjetoCanvas.setFont( "Calibri", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 166/255, 166/255, 166/255 )           # Asigna el color "Negro" al ObjetoCanvas
@@ -358,7 +352,6 @@ ObjetoCanvas.drawString( 260,                                       # Escribe el
                          "Página 1 de X - Ed. 0"
                         )
 
-                        
 ObjetoCanvas.setFont( "Calibri-Italic", 8 )                                # Cambia el tipo de fuente de texto y el tamaño con la función: setFont( "Nombre de la fuente-Estilo", Tamaño )
 ObjetoCanvas.setFillColorRGB( 1, 0, 0 )                             # Asigna el color "Negro" al ObjetoCanvas
 
