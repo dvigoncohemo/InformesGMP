@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QColorDialog
 from Fuentes_de_texto import *
-from Informacion import *
 from interfaz import *
+from Ayuda import *
 
 import pandas as pd 
 import time
@@ -24,49 +24,49 @@ class Fuente_de_texto( QtWidgets.QMainWindow, Ui_Fuentes_de_texto ):
         print("Pulsado: Fuente de texto -> Cencelar")
         
 
-class Espaciado_de_texto( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Espaciado_de_texto( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Colores( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Colores( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Linea( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Linea( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Grilla( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Grilla( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Ayuda( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Ayuda( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Sobre_Cohemo_GMP( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Sobre_Cohemo_GMP( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
 
-class Solucionar_Problemas( QtWidgets.QMainWindow, Ui_informacion_version ):
+class Solucionar_Problemas( QtWidgets.QMainWindow, Ui_Ayuda ):
 
     def __init__( self, *args, **kwargs ):
         super().__init__(*args, **kwargs)
@@ -137,11 +137,11 @@ class MainWindow( QtWidgets.QMainWindow, Ui_MainWindow ):
     
     # Función que realiza la acción de reiniciar los campos del programa mediante la ruta Archivo -> Abrir
     def Funcion_Abrir( self ):
-        app
+        nada
     
     # Función que realiza la acción de reiniciar los campos del programa mediante la ruta Archivo -> Guardar
     def Funcion_Guardar( self ):
-        app
+        nada
     
     # Función que realiza la acción de salir del programa mediante la ruta Archivo -> Salir
     def Funcion_Salir( self ):
@@ -208,8 +208,8 @@ class MainWindow( QtWidgets.QMainWindow, Ui_MainWindow ):
     # Función que realiza la acción de realizar las llamadas a las demás funciones encargadas de formar el informe de salida
     def Funcion_generar_informe( self ):
 
-        self.QLineEdit_archivo_de_entrada.setText("Generando informe...") 
-        self.QLineEdit_imagen_de_portada.setText("Generando informe...") 
+        self.QLineEdit_archivo_de_entrada.setText("Generando informe...")
+        self.QLineEdit_imagen_de_portada.setText("Generando informe...")
         self.QLineEdit_ruta_de_salida.setText("Generando informe...")
         self.Funcion_barra_progreso()
     
@@ -217,14 +217,14 @@ class MainWindow( QtWidgets.QMainWindow, Ui_MainWindow ):
     def Funcion_archivo_de_entrada( self ):
 
         self.Archivo_de_entrada, _ = QFileDialog.getOpenFileName( self, "Abrir...", "", "Archivos de texto (*.txt)" )
-        self.QLineEdit_archivo_de_entrada.setText( self.Archivo_de_entrada ) 
+        self.QLineEdit_archivo_de_entrada.setText( self.Archivo_de_entrada )
             
     # Función que realiza la acción de pedir al usuario un archivo de imagen para la portada del documento en formato .jpg / .png
     def Funcion_imagen_de_portada( self ):
 
-        self.QLineEdit_archivo_de_entrada.setText("Funcion_imagen_de_portada") 
-        self.QLineEdit_imagen_de_portada.setText("Funcion_imagen_de_portada") 
-        self.QLineEdit_ruta_de_salida.setText("Funcion_imagen_de_portada") 
+        self.QLineEdit_archivo_de_entrada.setText("Funcion_imagen_de_portada")
+        self.QLineEdit_imagen_de_portada.setText("Funcion_imagen_de_portada")
+        self.QLineEdit_ruta_de_salida.setText("Funcion_imagen_de_portada")
     
     # Función que realiza la acción de pedir al usuario un directorio de salida donde se creará el informe en PDF
     def Funcion_ruta_de_salida( self ):
