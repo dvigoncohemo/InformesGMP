@@ -1,0 +1,17 @@
+import Recursos.Python.Abrir
+import Recursos.Python.Ayuda
+import Recursos.Python.Colores
+import Recursos.Python.Espaciado
+import Recursos.Python.Fondo
+import Recursos.Python.Fuentes
+import Recursos.Python.Generar
+import Recursos.Python.Grilla
+import Recursos.Python.Guardar
+import Recursos.Python.Icono
+import Recursos.Python.Imagen
+import Recursos.Python.Linea
+import Recursos.Python.Logo
+import Recursos.Python.Informacion
+import Recursos.Python.Nuevo
+import Recursos.Python.Salir
+import Recursos.Python.Soporte

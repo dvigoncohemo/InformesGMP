@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Espaciado">
+    <file>../PNG/Espaciado.png</file>
+  </qresource>
+</RCC>

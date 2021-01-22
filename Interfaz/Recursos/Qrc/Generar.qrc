@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Generar">
+    <file>../PNG/Generar.png</file>
+  </qresource>
+</RCC>

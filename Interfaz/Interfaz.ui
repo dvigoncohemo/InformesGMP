@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Cohemo - Generador de informes GMP</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/icono/icono.ico</normaloff>:/icono/icono.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/Fondo/PNG/Fondo.png);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="QLabel_logotipo">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>400</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>2</horstretch>
+      <verstretch>2</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>400</width>
+      <height>130</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>1</width>
+      <height>1</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+image: url(:/Logo_texto/PNG/Logo_texto.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="QPushbutton_generar_informe">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>400</y>
+      <width>211</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(5, 184, 204);
+	font: 12pt &quot;Calibri&quot;;
+    border: 1px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+
+QPushButton:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QPushButton:focus{
+	border: 2px solid rgb(6, 231, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Generar informe</string>
+    </property>
+    <property name="icon">
+     <iconset resource="Recursos/Qrc/Generar.qrc">
+      <normaloff>:/Generar/PNG/Generar.png</normaloff>:/Generar/PNG/Generar.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>45</width>
+      <height>45</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>350</y>
+      <width>721</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar {
+	color: rgb(255, 255, 255);
+	font: 12pt &quot;Calibri&quot;;
+    border: 1px solid white;
+    border-radius: 4px;
+	text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #05B8CC;
+    width: 15px;
+}</string>
+    </property>
+    <property name="value">
+     <number>60</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="format">
+     <string>%p%</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="QPushButton_archivo_de_entrada">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>170</y>
+      <width>82</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>82</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 1px solid #8f8f91;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+
+QPushButton:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QPushButton:focus{
+	border: 2px solid rgb(6, 231, 255);
+}
+
+image: url(:/Nuevo/PNG/Nuevo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Recursos/Qrc/Abrir.qrc">
+      <normaloff>:/Abrir/PNG/Abrir.png</normaloff>:/Abrir/PNG/Abrir.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="QLineEdit_ruta_de_salida">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>290</y>
+      <width>630</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>630</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>630</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}
+
+QLineEdit:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QLineEdit:focus{
+	border: 2px solid rgb(5, 209, 231);
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>Guardar informe en...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="QPushButton_imagen_de_portada">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>230</y>
+      <width>82</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>82</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 1px solid #8f8f91;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+
+QPushButton:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QPushButton:focus{
+	border: 2px solid rgb(6, 231, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Recursos/Qrc/Imagen.qrc">
+      <normaloff>:/Imagen/PNG/Imagen.png</normaloff>:/Imagen/PNG/Imagen.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="QLineEdit_archivo_de_entrada">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>630</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}
+
+QLineEdit:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QLineEdit:focus{
+	border: 2px solid rgb(5, 209, 231);
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>Abrir archivo...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="QLineEdit_imagen_de_portada">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>630</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>630</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>630</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}
+
+QLineEdit:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QLineEdit:focus{
+	border: 2px solid rgb(5, 209, 231);
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>Abrir imagen de portada...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="QPushButton_ruta_de_salida">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>290</y>
+      <width>82</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>82</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 1px solid #8f8f91;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+
+QPushButton:hover{
+	border: 1px solid rgb(5, 184, 204);
+}
+
+QPushButton:focus{
+	border: 2px solid rgb(6, 231, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Recursos/Qrc/Guardar.qrc">
+      <normaloff>:/Guardar/PNG/Guardar.png</normaloff>:/Guardar/PNG/Guardar.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menu_Bar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Ayuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="action_Ayuda"/>
+    <addaction name="action_Sobre_Cohemo_GMP"/>
+    <addaction name="action_Solucionar_problemas"/>
+   </widget>
+   <widget class="QMenu" name="menu_Configuracion">
+    <property name="title">
+     <string>Preferencias</string>
+    </property>
+    <widget class="QMenu" name="menu_Preferencias">
+     <property name="title">
+      <string>Texto</string>
+     </property>
+     <addaction name="action_Fuente_de_texto"/>
+     <addaction name="action_Espaciado_de_texto"/>
+    </widget>
+    <widget class="QMenu" name="menu_Graficas">
+     <property name="title">
+      <string>Gráficas</string>
+     </property>
+     <addaction name="action_Colores"/>
+     <addaction name="action_Linea"/>
+     <addaction name="action_Grilla"/>
+    </widget>
+    <addaction name="menu_Preferencias"/>
+    <addaction name="menu_Graficas"/>
+   </widget>
+   <widget class="QMenu" name="menu_Archivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="action_Nuevo"/>
+    <addaction name="action_Abrir"/>
+    <addaction name="action_Guardar"/>
+    <addaction name="separator"/>
+    <addaction name="action_Salir"/>
+   </widget>
+   <addaction name="menu_Archivo"/>
+   <addaction name="menu_Configuracion"/>
+   <addaction name="menu_Ayuda"/>
+  </widget>
+  <action name="action_Ayuda">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Ayuda.qrc">
+     <normaloff>:/Ayuda/PNG/Ayuda.png</normaloff>:/Ayuda/PNG/Ayuda.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ayuda</string>
+   </property>
+  </action>
+  <action name="action_Solucionar_problemas">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Soporte.qrc">
+     <normaloff>:/Soporte/PNG/Soporte.png</normaloff>:/Soporte/PNG/Soporte.png</iconset>
+   </property>
+   <property name="text">
+    <string>Solucionar problemas</string>
+   </property>
+  </action>
+  <action name="action_Fuente_de_texto">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Fuentes.qrc">
+     <normaloff>:/Fuentes/PNG/Fuente.png</normaloff>:/Fuentes/PNG/Fuente.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fuente de texto</string>
+   </property>
+  </action>
+  <action name="action_Nuevo">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Nuevo.qrc">
+     <normaloff>:/Nuevo/PNG/Nuevo.png</normaloff>:/Nuevo/PNG/Nuevo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nuevo...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="action_Abrir">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Abrir.qrc">
+     <normaloff>:/Abrir/PNG/Abrir.png</normaloff>:/Abrir/PNG/Abrir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_Imprimir">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Imprimir/Imprimir.png</normaloff>:/Imprimir/Imprimir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir...</string>
+   </property>
+  </action>
+  <action name="action_Guardar">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Guardar.qrc">
+     <normaloff>:/Guardar/PNG/Guardar.png</normaloff>:/Guardar/PNG/Guardar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="action_Quitar">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Quitar/cruz-quitar-signo.png</normaloff>:/Quitar/cruz-quitar-signo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitar</string>
+   </property>
+  </action>
+  <action name="action_Salir">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Salir.qrc">
+     <normaloff>:/Salir/PNG/Salir.png</normaloff>:/Salir/PNG/Salir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_Espaciado_de_texto">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Espaciado.qrc">
+     <normaloff>:/Espaciado/PNG/Espaciado.png</normaloff>:/Espaciado/PNG/Espaciado.png</iconset>
+   </property>
+   <property name="text">
+    <string>Espaciado de texto</string>
+   </property>
+  </action>
+  <action name="action_Colores">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Colores.qrc">
+     <normaloff>:/Colores/PNG/Colores.png</normaloff>:/Colores/PNG/Colores.png</iconset>
+   </property>
+   <property name="text">
+    <string>Colores</string>
+   </property>
+  </action>
+  <action name="action_Linea">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Linea.qrc">
+     <normaloff>:/Linea/PNG/Linea.png</normaloff>:/Linea/PNG/Linea.png</iconset>
+   </property>
+   <property name="text">
+    <string>Línea</string>
+   </property>
+  </action>
+  <action name="action_Grilla">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Grilla.qrc">
+     <normaloff>:/Grilla/PNG/Grilla.png</normaloff>:/Grilla/PNG/Grilla.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grilla</string>
+   </property>
+  </action>
+  <action name="actionUsuario">
+   <property name="text">
+    <string>Usuario</string>
+   </property>
+  </action>
+  <action name="action_Sobre_Cohemo_GMP">
+   <property name="icon">
+    <iconset resource="Recursos/Qrc/Informacion.qrc">
+     <normaloff>:/PNG/PNG/Informacion.png</normaloff>:/PNG/PNG/Informacion.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sobre Cohemo GMP</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Recursos/Qrc/Abrir.qrc"/>
+  <include location="Recursos/Qrc/Informacion.qrc"/>
+  <include location="Recursos/Qrc/Linea.qrc"/>
+  <include location="Recursos/Qrc/Colores.qrc"/>
+  <include location="Recursos/Qrc/Salir.qrc"/>
+  <include location="Recursos/Qrc/Espaciado.qrc"/>
+  <include location="Recursos/Qrc/Nuevo.qrc"/>
+  <include location="Recursos/Qrc/Grilla.qrc"/>
+  <include location="Recursos/Qrc/Fuentes.qrc"/>
+  <include location="Recursos/Qrc/Soporte.qrc"/>
+  <include location="Recursos/Qrc/Ayuda.qrc"/>
+  <include location="Recursos/Qrc/Fondo.qrc"/>
+  <include location="Recursos/Qrc/Imagen.qrc"/>
+  <include location="Recursos/Qrc/Generar.qrc"/>
+  <include location="Recursos/Qrc/Guardar.qrc"/>
+  <include location="Recursos/Qrc/Icono.qrc"/>
+  <include location="Recursos/Qrc/Logo.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_Nuevo</sender>
+   <signal>triggered()</signal>
+   <receiver>QLineEdit_archivo_de_entrada</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>354</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Nuevo</sender>
+   <signal>triggered()</signal>
+   <receiver>QLineEdit_ruta_de_salida</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>354</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Nuevo</sender>
+   <signal>triggered()</signal>
+   <receiver>QLineEdit_imagen_de_portada</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>354</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Abrir</sender>
+   <signal>triggered()</signal>
+   <receiver>QPushButton_archivo_de_entrada</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>720</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Salir</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Guardar</sender>
+   <signal>triggered()</signal>
+   <receiver>QPushButton_ruta_de_salida</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>720</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

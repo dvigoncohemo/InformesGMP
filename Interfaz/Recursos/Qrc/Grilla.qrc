@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Grilla">
+    <file>../PNG/Grilla.png</file>
+  </qresource>
+</RCC>

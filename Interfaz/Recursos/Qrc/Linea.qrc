@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Linea">
+    <file>../PNG/Linea.png</file>
+  </qresource>
+</RCC>

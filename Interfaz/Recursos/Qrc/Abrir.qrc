@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Abrir">
+    <file>../PNG/Abrir.png</file>
+  </qresource>
+</RCC>
