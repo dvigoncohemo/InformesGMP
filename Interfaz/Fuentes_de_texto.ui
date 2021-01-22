@@ -262,7 +262,7 @@
   <widget class="QLabel" name="label_Tipo_de_fuente">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>60</y>
      <width>101</width>
      <height>21</height>

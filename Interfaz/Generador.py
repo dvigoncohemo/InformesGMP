@@ -135,13 +135,13 @@ class MainWindow( QtWidgets.QMainWindow, Ui_MainWindow ):
         self.Porcentaje_actual = 0                                          # Asigna el valor 0 al Porcentaje_actual de la barra de progreso
         self.progressBar.setVisible(False)                                  # Oculta la barra de progreso
     
-    # Función que realiza la acción de reiniciar los campos del programa mediante la ruta Archivo -> Abrir
+    # Función que realiza la acción de asignar los campos del programa mediante la ruta Archivo -> Abrir
     def Funcion_Abrir( self ):
-        nada
+        a = 0
     
     # Función que realiza la acción de reiniciar los campos del programa mediante la ruta Archivo -> Guardar
     def Funcion_Guardar( self ):
-        nada
+        a = 0
     
     # Función que realiza la acción de salir del programa mediante la ruta Archivo -> Salir
     def Funcion_Salir( self ):
@@ -222,9 +222,7 @@ class MainWindow( QtWidgets.QMainWindow, Ui_MainWindow ):
     # Función que realiza la acción de pedir al usuario un archivo de imagen para la portada del documento en formato .jpg / .png
     def Funcion_imagen_de_portada( self ):
 
-        self.QLineEdit_archivo_de_entrada.setText("Funcion_imagen_de_portada")
         self.QLineEdit_imagen_de_portada.setText("Funcion_imagen_de_portada")
-        self.QLineEdit_ruta_de_salida.setText("Funcion_imagen_de_portada")
     
     # Función que realiza la acción de pedir al usuario un directorio de salida donde se creará el informe en PDF
     def Funcion_ruta_de_salida( self ):
